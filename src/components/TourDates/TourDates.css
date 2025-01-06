@@ -1,0 +1,104 @@
+.tour-section {
+  padding: 6rem 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.tour-dates-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tour-date-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.tour-date-card:hover {
+  transform: translateX(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.date-info {
+  text-align: left;
+}
+
+.show-date {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.venue-info {
+  text-align: left;
+}
+
+.venue-name {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.venue-location {
+  margin: 0.5rem 0 0;
+  color: #888;
+}
+
+.ticket-action {
+  text-align: right;
+}
+
+.ticket-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.ticket-button:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.tour-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.view-all-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.view-all-button:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .tour-date-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .date-info,
+  .venue-info,
+  .ticket-action {
+    text-align: center;
+  }
+}
