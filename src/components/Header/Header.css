@@ -1,3 +1,4 @@
+/* General Styles */
 .header {
   position: fixed;
   top: 0;
@@ -47,50 +48,77 @@
   transform: scale(1.05);
 }
 
+/* Navigation Menu */
 .nav-menu {
+  position: fixed;
+  top: 0;
+  left: 60%;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.98);
   display: flex;
-  gap: 3rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.nav-menu.active {
+  transform: translateX(0);
 }
 
 .nav-links {
   display: flex;
-  gap: 2.5rem;
-  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
 }
 
 .nav-link {
+  font-size: 1.2rem;
   font-family: var(--font-display);
-  color: var(--text-color);
+  color: var(--text-light);
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 0.8rem;
-  font-weight: 500;
   letter-spacing: 0.1em;
   transition: color var(--transition-fast);
-  position: relative;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--gradient-primary);
-  transition: width var(--transition-normal);
 }
 
 .nav-link:hover {
   color: var(--accent-color);
 }
 
-.nav-link:hover::after {
-  width: 100%;
+.nav-footer {
+  margin-top: 2rem;
 }
 
+/* Shop Button */
+.shop-now-btn {
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  border-radius: 30px;
+  background: var(--gradient-primary);
+  color: var(--text-light);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.shop-now-btn:hover {
+  background: var(--accent-color);
+  color: #fff;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Mobile Menu Toggle */
 .menu-toggle {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 6px;
   background: none;
@@ -120,102 +148,20 @@
   transform: translateY(-8px) rotate(-45deg);
 }
 
-.social-links {
-  display: flex;
-  gap: 2rem;
-}
-
-.social-icon {
-  font-size: 1.5rem;
-  color: var(--text-secondary);
-  transition: color var(--transition-fast), transform var(--transition-fast);
-}
-
-.social-icon:hover {
-  color: var(--accent-color);
-  transform: scale(1.1);
-}
-
-.shop-now-btn {
-  display: inline-block;
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-color);
-  background: var(--gradient-primary);
-  padding: 0.8rem 2rem;
-  border-radius: 40px;
-  text-decoration: none;
-  transition: all var(--transition-fast);
-  box-shadow: var(--shadow-sm);
-}
-
-.shop-now-btn:hover {
-  background: var(--accent-color);
-  color: #fff;
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
+/* Responsive Styles */
 @media (max-width: 768px) {
   .header-content {
     padding: 0 1.5rem;
   }
 
-  .menu-toggle {
-    display: flex;
+  .nav-menu {
+    overflow-y: auto;
   }
 
   .nav-menu {
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(10, 10, 10, 0.98);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(100%);
-    transition: transform var(--transition-normal);
-    padding: 2rem;
-  }
-
-  .nav-menu.active {
-    transform: translateX(0);
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 2rem;
-    margin-bottom: 3rem;
-  }
-
-  .nav-link {
-    font-size: 1.2rem;
-  }
-
-  .nav-footer {
-    text-align: center;
-  }
-
-  .social-links {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .social-links a {
-    font-family: var(--font-display);
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    transition: color var(--transition-fast);
-  }
-
-  .social-links a:hover {
-    color: var(--accent-color);
   }
 }

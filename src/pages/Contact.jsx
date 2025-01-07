@@ -1,95 +1,66 @@
-import { useState } from 'react'
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+import FreddieGuy from '../../public/images/freddie-guy.jpg';
+import './Contact.css';
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Handle form submission logic here
-    console.log('Form submitted:', formData)
-  }
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
+export default function Contact() {
   return (
-    <div className="contact-page">
+    <>
       <Header />
-      <main className="contact-content">
-        <div className="container">
-          <h1>Contact Us</h1>
-          <div className="contact-grid">
+      <section className="contact-section">
+        <div className="contact-container">
+          <div className="contact-header">
+            <h2 className="section-title">Contact</h2>
+            <div className="header-divider"></div>
+            <p className="contact-subtitle">Management & Representation</p>
+          </div>
+
+          <div className="contact-wrapper">
             <div className="contact-info">
-              <h2>Get in Touch</h2>
-              <p>For bookings and inquiries, please fill out the form or contact us directly.</p>
-              <div className="contact-details">
-                <p>Email: booking@freddiemusic.com</p>
-                <p>Management: management@freddiemusic.com</p>
+              <div className="info-group">
+                <h3>Management</h3>
+                <p>Universal Music Group</p>
+                <p>management@example.com</p>
+                <p>+1 (555) 123-4567</p>
+              </div>
+              <div className="info-group">
+                <h3>Booking</h3>
+                <p>Live Nation Entertainment</p>
+                <p>booking@example.com</p>
+                <p>+1 (555) 234-5678</p>
+              </div>
+              <div className="info-group">
+                <h3>Press</h3>
+                <p>Media Relations</p>
+                <p>press@example.com</p>
+                <p>+1 (555) 345-6789</p>
               </div>
             </div>
-            
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
+
+            <div className="contact-info">
+              <div className="info-group">
+                <h3>Record Label</h3>
+                <p>Columbia Records</p>
+                <p>label@example.com</p>
+                <p>+1 (555) 456-7890</p>
               </div>
-              <div className="form-group">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
+              <div className="info-group">
+                <h3>Legal</h3>
+                <p>Entertainment Law Partners LLP</p>
+                <p>legal@example.com</p>
+                <p>+1 (555) 567-8901</p>
               </div>
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                />
+              <div className="info-group">
+                <h3>Licensing</h3>
+                <p>Global Licensing Division</p>
+                <p>licensing@example.com</p>
+                <p>+1 (555) 678-9012</p>
               </div>
-              <div className="form-group">
-                <textarea
-                  name="message"
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" className="submit-button">
-                Send Message
-              </button>
-            </form>
+            </div>
           </div>
         </div>
-      </main>
+      </section>
       <Footer />
-    </div>
-  )
+    </>
+  );
 }
-
-export default Contact
