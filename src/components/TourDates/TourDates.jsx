@@ -121,8 +121,12 @@ const TourDates = () => {
       <div className="container">
         <h2 className="section-title">Upcoming Shows</h2>
         <div className="tour-dates-container">
-          {tourDates.map((show) => (
-            <div key={show.id} className="tour-date-card">
+          {tourDates.map((show, index) => (
+            <div 
+              key={show.id} 
+              className="tour-date-card"
+              style={{ '--index': index }}
+            >
               <div className="date-info">
                 <span className="show-date">{show.date}</span>
               </div>

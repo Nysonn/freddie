@@ -31,8 +31,12 @@ const AlbumsSection = () => {
       <div className="container">
         <h2 className="section-title">Latest Releases</h2>
         <div className="albums-grid">
-          {albums.map((album) => (
-            <div key={album.id} className="album-card">
+          {albums.map((album, index) => (
+            <div 
+              key={album.id} 
+              className="album-card"
+              style={{ '--index': index }}
+            >
               <div className="album-image-container">
                 <img src={album.image} alt={album.title} className="album-image" />
                 <div className="album-overlay">

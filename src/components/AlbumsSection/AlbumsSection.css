@@ -21,6 +21,9 @@
 .album-card {
   text-align: center;
   transition: transform 0.3s ease;
+  opacity: 0;
+  animation: scaleIn 0.6s ease forwards;
+  animation-delay: calc(var(--index) * 0.2s);
 }
 
 .album-card:hover {
@@ -60,7 +63,7 @@
 }
 
 .album-image-container:hover .album-image {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(2deg);
 }
 
 .play-button {
@@ -73,10 +76,18 @@
   text-transform: uppercase;
   font-weight: bold;
   transition: transform 0.2s ease;
+  transform: scale(0.8);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .play-button:hover {
   transform: scale(1.1);
+}
+
+.album-image-container:hover .play-button {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .album-title {
